@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+  }
+
+#header {
+    color: white;
+    background-color: black;
+    padding: 5px;
+}
+
+#search {
+    background-color: lightgrey;
+}
+
+#daily {
+    border: 1px solid black;
+}
