@@ -32,31 +32,31 @@
             <div class="col-lg-3" id="search">
                 <h2>Search for a City</h2>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Austin, TX" aria-label="City, State" aria-describedby="button-addon2">
+                    <input type="text" class="form-control" placeholder="Austin" aria-label="City" aria-describedby="citySearch">
                     <div class="input-group-append">
-                      <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search-location"></i></button>
+                      <button class="btn btn-primary" type="button" id="citySearch"><i class="fas fa-search-location"></i></button>
                     </div>
                 </div>
                 <div class="searchHistory"></div>
             </div>
             <div class="col-lg-9" id="weather">
                 <div class="row hide">
-                    <div class="col-lg-9" id="daily">
-                        <h2>City (1/1/2020)</h2>
-                        <h2>Temperature: </h2>
-                        <h2>Humidity: </h2>
-                        <h2>Wind Speed: </h2>
-                        <h2>UV Index: </h2>
+                    <div class="col" id="daily">
+                        <h2><span id="cityMain"></span></h2>
+                        <h2>Temperature: <span id="temperature"></span>°F</h2>
+                        <h2>Humidity: <span id="humidity"></span>%</h2>
+                        <h2>Wind Speed: <span id="windSpeed"></span>MPH</h2>
+                        <h2>UV Index: <span id="uvIndex"></span></h2>
                     </div>
                 </div>
                 <div class="row hide">
-                    <div class="col-lg-9">
+                    <div class="col">
                         <h2>5 Day Forecast</h2>
                     </div>
                 </div>
                 <div class="row hide">
-                    <div class="col-lg" id="fiveDay">
-                        <div class="card" style="width: 14rem;">
+                    <div class="col fiveDay">
+                        <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <h6 class="card-text">Card subtitle</h6>
@@ -64,8 +64,8 @@
                             </div>
                         </div>
                     </div>  
-                    <div class="col-lg" id="fiveDay">
-                        <div class="card" style="width: 14rem;">
+                    <div class="col fiveDay">
+                        <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <h6 class="card-text">Card subtitle</h6>
@@ -73,8 +73,8 @@
                             </div>
                         </div>
                     </div>  
-                    <div class="col-lg" id="fiveDay">
-                        <div class="card" style="width: 14rem;">
+                    <div class="col fiveDay">
+                        <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <h6 class="card-text">Card subtitle</h6>
@@ -82,8 +82,8 @@
                             </div>
                         </div>
                     </div>  
-                    <div class="col-lg" id="fiveDay">
-                        <div class="card" style="width: 14rem;">
+                    <div class="col fiveDay">
+                        <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <h6 class="card-text">Card subtitle</h6>
@@ -91,8 +91,8 @@
                             </div>
                         </div>
                     </div>  
-                    <div class="col-lg" id="fiveDay">
-                        <div class="card" style="width: 14rem;">
+                    <div class="col fiveDay">
+                        <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">Card title</h5>
                               <h6 class="card-text">Card subtitle</h6>
@@ -104,6 +104,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="script.js"></script>
 
