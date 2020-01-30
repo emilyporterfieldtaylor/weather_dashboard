@@ -15,6 +15,28 @@ function GetWeather(city) {
         $("#humidity").text(response.main.humidity);
         $("#windSpeed").text(response.wind.speed);
     });
+
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=" + apiKey;
+    $.ajax({
+        url: forecastURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        var dateTime = (" " + moment(response.list[0].dt, "X").format("MM/DD/YYYY"));
+        var dateArr = (response.list[0]);
+
+        $(dateArr).each(function(index, element){
+            console.log(city);
+            getForcast(element);
+        });
+        
+        function getForecast(city){
+            $("#dateFive").text(dateTime);
+            $("#tempFive").text(response.list[1].main.temp);
+            $("#humidityFive").text(response.list[1].main.humidity);
+        }
+
+    });
 }
 
 function addButton(city) {
@@ -32,8 +54,7 @@ function searchCity(city) {
 $(document).ready(function () {
     cityList = JSON.parse(localStorage.getItem("cityList"));;
     
-    if (cityList === null)
-    {
+    if (cityList === null) {
         cityList = [];
     }
 
