@@ -2,7 +2,17 @@ $( document ).ready(function() {
     console.log( "ready!" );
 });
 
-var city = JSON.parse(localStorage.getItem("city"));
+var city = "Austin";
+// var city = JSON.parse(localStorage.getItem("city"));
+var apiKey = "ef8cf9f7ace571698b37ad03714d34f7";
+var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + apiKey;
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function(response){
+    console.log(response);
+})
 
 if (city != null){
     $("input").each(function (index, element){
@@ -17,5 +27,6 @@ $("button").click(function(){
         return $(this).val();
     });
     localStorage.setItem("city", JSON.stringify(city));
-    $(".searchHistory").prepend("<button>" + city[0] + "</button>");
+    $(".searchHistory").prepend("<button type=\"button\" class=\"btn btn-outline-info\">" + city[0] + "</button>");
    });
+
