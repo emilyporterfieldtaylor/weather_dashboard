@@ -30,17 +30,19 @@ function GetWeather(city) {
         });
         
     });
+
+    
 }
 
 function getForecast(dateTime, response){
     $("#dateFive").text(dateTime);
-    $("#tempFive").text(response.list[1].main.temp);
+    $("#tempFive").text(Math.floor((response.list[1].main.temp - 273.15) * 1.80) + 32);
     $("#iconFive").append("<img src=\"http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png\">");
     $("#humidityFive").text(response.list[1].main.humidity);
 }
 
 function addButton(city) {
-    $(".searchHistory").prepend("<div class='row'><div class='col'><button type=\"button\" class=\"btn btn-outline-info city-btn\">" + city + "</button></div></div>");
+    $(".searchHistory").prepend("<div class='row'><div class='col'><button type=\"button\" class=\"btn btn-outline-info city-btn\" id=\"citySearch\">" + city + "</button></div></div>");
 }
 
 function searchCity(city) {
