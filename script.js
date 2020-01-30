@@ -26,17 +26,17 @@ function GetWeather(city) {
         var dateArr = (response.list[0]);
 
         $(dateArr).each(function(index, element){
-            console.log(city);
-            getForcast(element);
+            getForecast(dateTime, response);
         });
         
-        function getForecast(city){
-            $("#dateFive").text(dateTime);
-            $("#tempFive").text(response.list[1].main.temp);
-            $("#humidityFive").text(response.list[1].main.humidity);
-        }
-
     });
+}
+
+function getForecast(dateTime, response){
+    $("#dateFive").text(dateTime);
+    $("#tempFive").text(response.list[1].main.temp);
+    $("#iconFive").append("<img src=\"http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png\">");
+    $("#humidityFive").text(response.list[1].main.humidity);
 }
 
 function addButton(city) {
