@@ -23,7 +23,6 @@ function GetWeather(city) {
             url: uviURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
             $("#uvIndex").text(response.value);
             uvIndexLevel(response.value);
         });
@@ -70,6 +69,8 @@ function searchCity(city) {
 }
 
 function uvIndexLevel(uvIndex){
+    $("#uvIndex").removeClass();
+
     if (uvIndex < 4) {
         $("#uvIndex").addClass("badge badge-pill badge-success");
     } else if (uvIndex >= 4 && uvIndex < 7) {
